@@ -21,18 +21,18 @@
 ---
 
 ## 🔧 Fitur yang Sudah Ada tapi Belum Berfungsi  
-- 👥 **CRUD User** (admin mengelola data pengguna)  
-- 🌟 **CRUD Featured Tours**  
-- 📄 **Detail Featured Tours**  
+- **CRUD User** (admin mengelola data pengguna)  
+- **CRUD Featured Tours**  
+- **Detail Featured Tours**  
 
 ---
 
 ## 🚧 Fitur dalam Pengembangan  
-- 📝 **Form Booking Tour**  
-- 💳 **Integrasi Pembayaran**  
-- 🔍 **Pencarian & Filter Destinasi**  
-- ⭐ **Review Destinasi**  
-- 📱 **UI/UX Responsif dan Modern**  
+- **Form Booking Tour**  
+- **Integrasi Pembayaran**  
+- **Pencarian & Filter Destinasi**  
+- **Review Destinasi**  
+- **UI/UX Responsif dan Modern**  
 
 ---
 
@@ -40,7 +40,6 @@
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** PHP  
 - **Database:** MySQL  
-- **Framework/Library:** Bootstrap  
 
 ---
 
@@ -49,8 +48,3 @@ Project ini masih dalam tahap **pengembangan aktif**.
 Beberapa fitur inti sudah berjalan (login, register, CRUD destinasi, detail destinasi), sementara fitur tambahan masih dalam tahap implementasi.  
 
 ---
-
-## 🚀 Cara Menjalankan Project  
-1. Clone repository ini:  
-   ```bash
-   git clone https://github.com/USERNAME/REPO-NAME.git
