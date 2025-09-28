@@ -31,7 +31,7 @@
 - 📝 **Form Booking Tour**  
 - 💳 **Integrasi Pembayaran**  
 - 🔍 **Pencarian & Filter Destinasi**  
-- ⭐ **Rating & Review Destinasi**  
+- ⭐ **Review Destinasi**  
 - 📱 **UI/UX Responsif dan Modern**  
 
 ---
