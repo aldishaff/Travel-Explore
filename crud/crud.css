@@ -1,0 +1,263 @@
+/* ===== Form Container ===== */
+/* ===== Background Blur ===== */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+/* ===== Modal Container ===== */
+.form-container {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* ===== Close Button ===== */
+.close-modal {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-modal:hover {
+    color: #0984e3;
+}
+
+/* ===== Form Fields ===== */
+.form-container input[type="text"],
+.form-container textarea,
+.form-container select,
+.form-container input[type="file"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #dfe6e9;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-container input[type="text"]:focus,
+.form-container textarea:focus,
+.form-container select:focus,
+.form-container input[type="file"]:focus {
+    border-color: #0984e3;
+    box-shadow: 0 0 5px rgba(9,132,227,0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* ===== Rating Stars ===== */
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 1.5rem;
+    color: #dcdcdc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #ffc107;
+}
+
+/* ===== Buttons ===== */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #0984e3, #74b9ff);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(9,132,227,0.4);
+}
+
+/* ===== Back Link ===== */
+.form-container a {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+    text-decoration: none;
+    padding: 10px 0;
+    border-radius: 10px;
+    background: #dfe6e9;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.form-container a:hover {
+    background: #0984e3;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ===== Current Image ===== */
+.form-container img {
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    max-width: 150px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== Responsive ===== */
+@media(max-width: 500px){
+    .form-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .rating label {
+        font-size: 1.3rem;
+    }
+
+    button[type="submit"], .form-container a {
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+}
+
+
+/* ===== Rating Stars ===== */
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 1.5rem;
+    color: #dcdcdc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #ffc107;
+}
+
+/* ===== Buttons ===== */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #0984e3, #74b9ff);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(9,132,227,0.4);
+}
+
+/* ===== Back Link ===== */
+.form-container a {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+    text-decoration: none;
+    padding: 10px 0;
+    border-radius: 10px;
+    background: #dfe6e9;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.form-container a:hover {
+    background: #0984e3;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ===== Current Image ===== */
+.form-container img {
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    max-width: 150px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== Responsive ===== */
+@media(max-width: 768px){
+    .form-container {
+        padding: 20px;
+        margin: 2rem 10px;
+    }
+
+    .rating label {
+        font-size: 1.3rem;
+    }
+
+    button[type="submit"], .form-container a {
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+}

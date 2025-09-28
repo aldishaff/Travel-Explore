@@ -1,0 +1,237 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.508)); /* Gradasi dengan transparansi */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk kedalaman */
+    border-radius: 0 0 70px 70px; /* Sudut melengkung */
+    backdrop-filter: blur(5px); /* Efek blur di belakang navbar */
+    box-sizing: border-box;
+}
+
+.navbar .logo a {
+    color: #000000; /* Warna oranye cerah */
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+    margin-left: 20px;
+}
+
+.navbar .logo a:hover {
+    color: #ff9800; /* Ubah ke putih saat hover */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Jarak antar item menu */
+}
+
+.menu-item {
+    color: #000000; /* Warna putih */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+    margin-left: auto;
+}
+
+.menu-item:hover {
+    color: #ff9800; /* Warna oranye saat hover */
+    transform: scale(1.1); /* Sedikit membesar */
+}
+
+/* Welcome message styling */
+.welcome {
+    color: #ff9800;
+    font-size: 1rem;
+    margin-right: 1rem; /* Jarak sebelum tombol Sign Out */
+}
+
+.destination-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* jarak antar kotak */
+    max-width: 1100px;
+    margin: 3rem auto;
+}
+
+.destination-info, .destination-booking {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex: 1 1 400px;
+}
+
+.destination-info img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.destination-booking h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.destination-booking form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.destination-booking input, .destination-booking button {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #dfe6e9;
+    font-size: 1rem;
+}
+
+.destination-booking button {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.destination-booking button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.destination-info button {
+    display: block;
+    width: 200px;
+    margin: 20px auto 0;
+    padding: 12px 0;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.destination-info button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+table td {
+    padding: 8px 12px;
+    vertical-align: top; /* ⬅️ penting: biar teks panjang sejajar atas */
+}
+
+table td:first-child {
+    font-weight: 600;
+    color: #444;
+    min-width: 120px; /* kasih lebar fix untuk kolom label */
+    white-space: nowrap;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .destination-container {
+        flex-direction: column;
+    }
+}
+
+    /* Form Booking */
+    .booking-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .booking-form input, .booking-form select, .booking-form textarea {
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .booking-form button {
+        padding: 12px;
+        background: #0984e3;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .booking-form button:hover {
+        background: #74b9ff;
+    }
+
+    /* Responsive */
+    @media(max-width: 900px){
+        .destination-detail {
+            flex-direction: column;
+        }
+        .destination-right {
+            border-left: none;
+            border-top: 1px solid #eee;
+        }
+    }
+
+/* Popup */
+.popup {
+  display: none; 
+  position: fixed; 
+  z-index: 999; 
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center; 
+  align-items: center;
+}
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  animation: fadeInDown 0.4s ease;
+}
+.popup-content button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.popup-content button:hover {
+  background: #0652dd;
+}
+.close {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+@keyframes fadeInDown {
+  from {transform: translateY(-50px); opacity:0;}
+  to {transform: translateY(0); opacity:1;}
+}
