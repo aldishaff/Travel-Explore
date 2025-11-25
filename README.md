@@ -48,3 +48,5 @@ Project ini masih dalam tahap **pengembangan aktif**.
 Beberapa fitur inti sudah berjalan (login, register, CRUD destinasi, detail destinasi), sementara fitur tambahan masih dalam tahap implementasi.  
 
 ---
+
+https://github.com/aldishaff/Travel-Explore/blob/master/crudAPI/api.php
