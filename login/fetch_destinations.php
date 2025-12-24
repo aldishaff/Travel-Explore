@@ -1,4 +1,5 @@
 <?php
+// fetch_destination.php
 require_once 'db_connect.php';
 
 $query = "SELECT * FROM destinations";

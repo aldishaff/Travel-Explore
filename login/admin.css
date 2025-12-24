@@ -227,7 +227,7 @@ button:hover {
 
 /* ===== Rating Stars ===== */
 .rating {
-  display: flex;
+  display: none;
   gap: 5px;
   justify-content: flex-start;
 }
