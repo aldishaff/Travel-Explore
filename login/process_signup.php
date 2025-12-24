@@ -1,23 +1,34 @@
 <?php
-// Koneksi ke database
 require_once 'db_connect.php';
 
-// Periksa koneksi
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Ambil data dari form
-$username = $_POST['username'];
-$email = $_POST['email'];
-$password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Hash password
+$username = trim($_POST['username']);
+$email = trim($_POST['email']);
+$password_raw = $_POST['password'];
 
-// Simpan ke database
+$usernameRegex = "/^[A-Za-z]{3,}$/";
+$emailRegex = "/^[^\s@]+@[^\s@]+\.[^\s@]+$/";
+$passwordRegex = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/";
+
+if (!preg_match($usernameRegex, $username)) {
+    die("<p style='color:red;text-align:center;'>Username must be at least 3 letters.</p>");
+}
+if (!preg_match($emailRegex, $email)) {
+    die("<p style='color:red;text-align:center;'>Invalid email format.</p>");
+}
+if (!preg_match($passwordRegex, $password_raw)) {
+    die("<p style='color:red;text-align:center;'>Password must be at least 8 characters with letters and numbers.</p>");
+}
+
+$password = password_hash($password_raw, PASSWORD_BCRYPT);
+
 $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 if ($conn->query($sql) === TRUE) {
-    // Redirect to the Sign In page after successful sign-up
-    header("Location: sign_in.php");  // Redirect to sign_in.php
-    exit(); // Make sure no further code is executed after the redirect
+    header("Location: sign_in.php");
+    exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

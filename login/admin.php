@@ -93,6 +93,7 @@ $users = $conn->query("SELECT id, username, email FROM users ORDER BY id DESC");
                         <option value="Gunung">Gunung</option>
                         <option value="Budaya">Budaya</option>
                         <option value="Kuliner">Kuliner</option>
+                        <!-- <option value="Tur">Tur</option> -->
                         <option value="Alam / Snorkeling">Alam / Snorkeling</option>
                     </select>
                     
@@ -118,8 +119,12 @@ $users = $conn->query("SELECT id, username, email FROM users ORDER BY id DESC");
                     </div>
 
                     
-                    <!-- Google Maps Location Search -->
-                    <input type="text" id="map_location" placeholder="Url Maps">
+                    <!-- Google Maps -->
+                    <input type="text" 
+                        id="map_location" 
+                        name="map_url" 
+                        placeholder="Url Maps"
+                        >
 
                     <button type="submit">Add Destination</button>
                 </form>

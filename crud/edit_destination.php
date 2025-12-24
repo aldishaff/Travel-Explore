@@ -1,4 +1,5 @@
 <?php
+//edit_destination.php
 session_start();
 require_once '../login/db_connect.php';
 

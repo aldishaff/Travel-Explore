@@ -1,25 +1,19 @@
 <?php
 session_start();
-
-// Assuming you have a file for database connection like db_connect.php
-require_once 'db_connect.php';  // Include your database connection file here
+require_once 'db_connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve user input
-    $email = $_POST['email'];
+    $email = trim($_POST['email']);
     $password = $_POST['password'];
 
-    // ==== CEK LOGIN ADMIN MANUAL ====
     if ($email === "admin@gmail.com" && $password === "admin123") {
         $_SESSION['username'] = "Admin";
-        // $_SESSION['role'] = "admin"; // tambahkan role biar jelas
         header("Location: admin.php");
         exit();
     }
 
-    // ==== CEK LOGIN USER BIASA (DATABASE) ====
     $query = "SELECT * FROM users WHERE email = ?";
-    $stmt = $conn->prepare($query);  // Prepare the query
+    $stmt = $conn->prepare($query);
 
     if ($stmt === false) {
         die('Error preparing the query: ' . $conn->error);
@@ -35,15 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $user['password'])) {
             $_SESSION['username'] = $user['username'];
             $_SESSION['user_id'] = $user['id'];
-            // $_SESSION['role'] = "user"; // role user biasa
-            
-            header("Location: /demoWeb/index.php"); // redirect ke halaman user biasa
+            header("Location: /demoWeb/index.php");
             exit();
         } else {
-            echo "<p>Invalid credentials. Please try again.</p>";
+            echo "<p style='color:red;text-align:center;'>Invalid password. Please try again.</p>";
         }
     } else {
-        echo "<p>No user found with this email.</p>";
+        echo "<p style='color:red;text-align:center;'>No user found with this email.</p>";
     }
 }
 ?>

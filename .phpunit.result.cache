@@ -1,0 +1,1 @@
+{"version":2,"defects":[],"times":{"PopularDestinationTest::test_required_fields":0.018,"PopularDestinationTest::test_invalid_google_maps_url":0,"PopularDestinationTest::test_invalid_file_type":0,"PopularDestinationTest::test_valid_input":0.001}}

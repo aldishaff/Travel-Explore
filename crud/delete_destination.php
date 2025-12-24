@@ -1,4 +1,5 @@
 <?php
+//delete_destination.php
 require_once '../login/db_connect.php';
 
 if(isset($_GET['id'])) {
